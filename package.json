@@ -3,15 +3,27 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "generate:mock:petstore": "msw-auto-mock https://petstore.swagger.io/v2/swagger.json -o ./mocks/petstore.ts --node --base-url https://petstore.swagger.io/v2 --static"
+    "generate:mock:petstore": "msw-auto-mock https://petstore.swagger.io/v2/swagger.json -o ./mocks/petstore.ts --node --base-url https://petstore.swagger.io/v2 --static",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
+    "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/client-preset": "4.2.3",
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-msw": "^3.0.0",
     "@types/bun": "latest",
+    "graphql-codegen-typescript-mock-data": "^3.7.1",
     "msw": "^2.2.1",
-    "msw-auto-mock": "^0.18.0"
+    "msw-auto-mock": "^0.18.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.3.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0"
   }
 }

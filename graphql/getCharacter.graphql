@@ -1,0 +1,6 @@
+query getCharacter {
+  character(id: 1) {
+    name
+    status
+  }
+}

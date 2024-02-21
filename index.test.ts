@@ -1,6 +1,7 @@
-import { expect, test, describe, beforeAll, afterEach, afterAll } from "bun:test"
+import { afterAll, afterEach, beforeAll, describe, expect, test } from "bun:test";
+import { getCharacter, getPet } from ".";
 import { server } from "./mocks/node";
-import { getPet } from ".";
+import { aCharacter } from "./graphql/generated/sdk";
 
 test("should test correctly", () => {
   expect("morty").toBe("morty");
@@ -29,5 +30,12 @@ describe("basic mocked suite", () => {
     const data = await getPet()
 
     expect(data).toMatchObject({ name: "doggie" });
+  })
+
+  test("should return a character", async () => {
+    const data = await getCharacter()
+    const character = aCharacter({ episode: [], location: { residents: [] } })
+
+    expect(data).toEqual({ character });
   })
 });
