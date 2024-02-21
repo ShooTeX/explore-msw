@@ -2,6 +2,9 @@
   "name": "explore-msw",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "generate:mock:petstore": "msw-auto-mock https://petstore.swagger.io/v2/swagger.json -o ./mocks/petstore.ts --node --base-url https://petstore.swagger.io/v2 --static"
+  },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
     "@types/bun": "latest",
